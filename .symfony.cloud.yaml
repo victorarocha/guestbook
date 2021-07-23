@@ -2,6 +2,7 @@ name: app
 
 type: php:8.0
 
+
 runtime:
     extensions:
         - apcu
@@ -9,6 +10,7 @@ runtime:
         - sodium
         - ctype
         - iconv
+        - pdo_pgsql
         
 
 #variables:
@@ -21,6 +23,8 @@ build:
 
 disk: 512
 
+relationships:
+    database: "db:postgresql"
 web:
     locations:
         "/":
